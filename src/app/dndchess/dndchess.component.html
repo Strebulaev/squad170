@@ -1,0 +1,49 @@
+<div class="chess-container">
+  <h1 class="title">D&D<span class="colortext">hub</span></h1>
+  <div class="pieces-column">
+    <div class="piece" *ngFor="let piece of pieces">
+      <div class="piece-name">{{ piece.name }} {{ piece.number }}</div>
+      <div class="piece-data">
+        <span>Здоровье:</span>
+        <input type="number" [min]="piece.minHealth" [max]="piece.maxHealth" [(ngModel)]="piece.health">
+      </div>
+      <div class="piece-data">
+        <span>Инициатива:</span>
+        <input type="number" [min]="piece.minInitiative" [max]="piece.maxInitiative" [(ngModel)]="piece.initiative">
+      </div>
+      <div *ngIf="piece.name === 'Король'" class="piece-data">
+        <span>Урон:</span>
+        <input type="number" min="0" max="2" value="1">
+      </div>
+      <div class="piece-actions">
+        <button  class="piece-actions" id="spell-menu-toggle" (click)="toggleSpellMenu(piece)">🔮</button>
+        <div class="spell-menu" [ngClass]="{'open': piece.spellMenuOpen}">
+          <button class="piece-actions" *ngFor="let spell of piece.spells" (click)="castSpell(piece, spell)">{{ spell }}</button>
+        </div>
+      </div>
+      <span *ngIf="piece.isParalyzed" class="paralyzed">🩸</span>
+      <span *ngIf="piece.isPoisoned" class="poisoned">☠️</span>
+      <div *ngIf="piece.name !== 'Король'" class="piece-data">
+        <span>Оружие:</span>
+        <select class="figure-weapon" (change)="showWeaponInfo($event, piece)">
+          <option value="" selected disabled hidden>Выберите оружие</option>
+          <option value="Алебарда">Алебарда</option>
+          <option value="Боевая кирка">Боевая кирка</option>
+          <option value="Двуручный меч">Двуручный меч</option>
+          <option value="Нунчаки">Нунчаки</option>
+          <option value="Эльфийский дуэльный клинок">Эльфийский дуэльный клинок</option>
+        </select>
+        <button class="weapon-icon" (click)="showWeaponInfo($event, piece)">🗡</button>
+      </div>
+      <div class="weapon-info-container">
+        <span class="weapon-info" [style.display]="piece.weaponInfo ? 'inline-block' : 'none'" [style.opacity]="piece.weaponInfo ? 1 : 0">{{ piece.weaponInfo }}</span>
+      </div>
+    </div>
+    <div class="arcaneum">
+      <span>Арканиумы:</span>
+      <br />
+      <input type="number" min="0" max="400" value="170">
+    </div>
+    <button class="next-turn-button" (click)="nextTurn()">⌛️</button>
+  </div>
+</div>

@@ -1,0 +1,217 @@
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.colortext {
+  font-weight: 1000;
+  background-color: #ff7000;
+  color: black;
+  border-radius: 5px;
+  height: 1px;
+  font-size: 47px;
+}
+
+body {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #1e1e1e;
+  overflow: hidden;
+}
+
+.chess-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  max-height: 100%;
+  background-color: #1e1e1e;
+  padding: 50px;
+}
+
+.title {
+  font-weight: 550;
+  background-color: #1e1e1e;
+  color: #fff;
+  font-size: 47px;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.pieces-column {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-right: 50px;
+}
+
+.piece {
+  width: 550px; 
+  height: 260px;
+  background-color: #222;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  margin-bottom: 20px;
+  padding: 20px;
+  color: #fff;
+  font-weight: bold;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+
+.piece-name {
+  font-size: 24px;
+  text-transform: uppercase;
+}
+
+.piece-data {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 10px; 
+}
+
+  .piece-data span {
+    color: #fefefe;
+    margin-right: 10px;
+  }
+
+  .piece-data input {
+    width: 40px;
+    height: 30px;
+    border: none;
+    border-radius: 5px;
+    background-color: #ff7000;
+    color: #333;
+    text-align: center;
+  }
+
+.next-turn-button {
+  position: fixed;
+  bottom: 20px;
+  left: 1118px;
+  background-color: #ff7000;
+  color: #fff;
+  font-size: 20px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  z-index: 2;
+  transition: background-color 0.3s ease;
+}
+
+  .next-turn-button:hover {
+    background-color: #dd4b1a;
+  }
+.spell-menu {
+  display: none;
+  position: absolute;
+  z-index: 9999;
+  background-color: black
+}
+
+  .spell-menu.open {
+    display: block;
+  }
+
+
+
+.arcaneum span {
+  color: #fefefe;
+  position: fixed;
+  bottom: 552px;
+  left: 1066px;
+  transform: translateX(-50%);
+  font-weight: bold;
+}
+
+.arcaneum input {
+  -webkit-appearance: none;
+  margin: 0;
+  opacity: 1;
+  position: fixed;
+  background-color: #ff7000;
+  width: 50px;
+  height: 30px;
+  bottom: 548px;
+  left: 1150px;
+  transform: translateX(-50%);
+  border: none;
+  border-radius: 5px;
+  color: #333;
+}
+
+.weapon-icon {
+  background-color: #858585;
+}
+
+.weapon-info {
+  text-align: center;
+}
+
+.figure-weapon {
+  background-color: #3b3b3b;
+  color: white;
+}
+
+.piece-actions {
+  background-color: #6b6b6b;
+}
+
+@media (max-width: 768px) {
+  .hub {
+    font-size: 40px;
+  }
+
+  .pieces-column {
+    margin: 0;
+  }
+
+  .piece {
+    width: 100%;
+    height: auto;
+    margin-bottom: 10px;
+    padding: 10px;
+    font-size: 20px;
+  }
+
+  .title {
+    font-size: 40px;
+    margin-bottom: 20px;
+  }
+
+  .next-turn-button {
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 20px;
+    padding: 10px 20px;
+  }
+
+  .arcaneum span {
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .arcaneum input {
+    width: 60%;
+    height: 30px;
+    bottom: 26px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .weapon-info {
+    font-size: 16px;
+  }
+}
+
+

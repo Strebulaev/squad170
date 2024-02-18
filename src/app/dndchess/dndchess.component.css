@@ -12,6 +12,11 @@ html, body {
   height: 1px;
   font-size: 47px;
 }
+.title img {
+  width: 100px; /* задайте ширину и высоту картинки по вашему усмотрению */
+  height: 100px;
+  /* Дополнительные стили картинки, если нужно */
+}
 
 body {
   position: relative;

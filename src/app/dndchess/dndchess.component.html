@@ -1,5 +1,9 @@
 <div class="chess-container">
-  <h1 class="title">Илья<span class="colortext">hub</span></h1>
+  <h1 class="title">
+    <img src="DnD.PNG" alt="Картинка DnD">
+    <span class="colortext">hub</span>
+  </h1>
+
   <div class="pieces-column">
     <div class="piece" *ngFor="let piece of pieces">
       <div class="piece-name">{{ piece.name }} {{ piece.number }}</div>
@@ -16,7 +20,7 @@
         <input type="number" min="0" max="2" value="1">
       </div>
       <div class="piece-actions">
-        <button  class="piece-actions" id="spell-menu-toggle" (click)="toggleSpellMenu(piece)">🔮</button>
+        <button class="piece-actions" id="spell-menu-toggle" (click)="toggleSpellMenu(piece)">🔮</button>
         <div class="spell-menu" [ngClass]="{'open': piece.spellMenuOpen}">
           <button class="piece-actions" *ngFor="let spell of piece.spells" (click)="castSpell(piece, spell)">{{ spell }}</button>
         </div>

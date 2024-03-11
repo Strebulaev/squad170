@@ -43,7 +43,7 @@ export class CountdownComponent implements OnInit {
   }
 
   updateCountdown(): void {
-    const targetDate = new Date('March 11, 2024 10:00:00').getTime();
+    const targetDate = new Date('March 17, 2024 20:00:00').getTime();
     const now = new Date().getTime();
     const difference = targetDate - now;
 
